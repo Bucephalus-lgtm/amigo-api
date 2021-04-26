@@ -10,7 +10,8 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(cors());
 
-mongoose.connect('mongodb+srv://nest:nest@cluster0.i8sxu.mongodb.net/sarthi?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
+mongoose.connect('mongodb+srv://nest:nest@cluster0.i8sxu.mongodb.net/sarthi?retryWrites=true&w=majority',
+    { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
     .then(() => console.log('MongoDB connected...'))
     .catch(err => console.log(err));
 

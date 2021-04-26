@@ -31,7 +31,7 @@ exports.login = async (req, res) => {
                 res.cookie('sarthi', token, { expire: new Date() + 9999 });
                 return res.json({ token, customer });
             } else {
-                return res.json({ error: 'Something went wrong!' });
+                return res.status(400).json({ error: 'Something went wrong!' });
             }
         } else {
             const seller = await Seller.signin(type, email, password);
@@ -40,7 +40,7 @@ exports.login = async (req, res) => {
                 res.cookie('sarthi', token, { expire: new Date() + 9999 });
                 return res.json({ token, seller });
             } else {
-                return res.json({ error: 'Something went wrong!' });
+                return res.status(400).json({ error: 'Something went wrong!' });
             }
         }
     } catch (err) {
