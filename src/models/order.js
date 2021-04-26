@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
 const { ObjectId } = mongoose.Schema;
 
 const CartItemSchema = new mongoose.Schema(
@@ -7,21 +6,21 @@ const CartItemSchema = new mongoose.Schema(
     product: { type: ObjectId, ref: "product" },
     name: String,
     price: Number,
-    count: Number
-  },
-  { timestamps: true }
+    count: Number,
+    seller: { type: ObjectId, ref: 'seller' },
+    image: String
+  }
 );
 
-const CartItem = mongoose.model("CartItem", CartItemSchema);
+const CartItem = mongoose.model("cartItem", CartItemSchema);
 
 const OrderSchema = new mongoose.Schema(
   {
     products: [CartItemSchema],
-    user: { type: ObjectId, ref: "customer" }
-  },
-  { timestamps: true }
+    user: { type: ObjectId, ref: 'customer' }
+  }
 );
 
-const Order = mongoose.model("Order", OrderSchema);
+const Order = mongoose.model("order", OrderSchema);
 
 module.exports = { Order, CartItem };

@@ -1,13 +1,11 @@
 const express = require("express");
 const router = express.Router();
 
-const { userById } = require("../controllers/user");
-const {
-    create
-} = require("../controllers/order");
+const { customerById } = require("../../controllers/customer");
+const { create } = require("../../controllers/order");
 
-router.post("/order/create/:userId", create);
+router.post("/order/create/:customerId", create);
 
-router.param("userId", userById);
+router.param("customerId", customerById);
 
 module.exports = router;

@@ -1,0 +1,16 @@
+{
+    "order": {
+        "products": [{
+            "_id": "6087022ad4572fa5f422bfe5",
+            "name": "Cabbage",
+            "category": "vegetable",
+            "price": 2000,
+            "image": "http://res.cloudinary.com/dymfk5fh1/image/upload/v1619460185/bhargab_files/rbsxmojxc4mhtkkiy14b.jpg",
+            "seller": "608701404e2af88bfc790344",
+            "createdAt": "2021-04-26T18:10:50.359Z",
+            "updatedAt": "2021-04-26T18:10:50.359Z",
+            "__v": 0,
+            "count": 1
+        }]
+    }
+}
