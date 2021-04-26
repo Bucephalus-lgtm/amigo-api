@@ -15,10 +15,12 @@ mongoose.connect('mongodb+srv://nest:nest@cluster0.i8sxu.mongodb.net/sarthi?retr
     .catch(err => console.log(err));
 
 const auth = require('./src/routes/public/auth');
+const product = require('./src/routes/public/products');
 
 app.get('/api', (req, res) => res.send('API working fine!'));
 
 app.use('/api', auth);
+app.use('/api', product);
 
 const PORT = process.env.PORT || 5000;
 
