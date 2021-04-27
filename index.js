@@ -1,5 +1,6 @@
 const dotenv = require('dotenv');
 dotenv.config();
+
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
@@ -15,12 +16,14 @@ db();
 const auth = require('./src/routes/public/auth');
 const product = require('./src/routes/public/products');
 const order = require('./src/routes/public/orders');
+const seller = require('./src/routes/public/seller');
 
 app.get('/api', (req, res) => res.send('API working fine!'));
 
 app.use('/api', auth);
 app.use('/api', product);
 app.use('/api', order);
+app.use('/api', seller);
 
 const PORT = process.env.PORT || 5000;
 
