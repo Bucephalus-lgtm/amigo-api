@@ -7,4 +7,9 @@ router.get("/get/all/sellers", async (req, res) => {
     return res.json({ sellers });
 });
 
+router.get("/seller/:id", async (req, res) => {
+    const seller = await Seller.findById(req.params.id);
+    return res.json({ seller });
+});
+
 module.exports = router;
