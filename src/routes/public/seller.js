@@ -1,15 +1,9 @@
 const express = require("express");
-const Seller = require("../../models/seller");
+const { get_all_sellers, seller_by_id } = require("../../controllers/seller");
 const router = express.Router();
 
-router.get("/get/all/sellers", async (req, res) => {
-    const sellers = await Seller.find();
-    return res.json({ sellers });
-});
+router.get("/get/all/sellers", get_all_sellers);
 
-router.get("/seller/:id", async (req, res) => {
-    const seller = await Seller.findById(req.params.id);
-    return res.json({ seller });
-});
+router.get("/seller/:id", seller_by_id);
 
 module.exports = router;
